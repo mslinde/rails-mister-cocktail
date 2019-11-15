@@ -4,7 +4,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    set_Cocktail
+    @cocktail = Cocktail.find(params[:id])
   end
 
   def new
@@ -12,7 +12,7 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @Cocktail = Cocktail.new(cocktail_params)
+    @cocktail = Cocktail.new(cocktail_params)
 
     if @cocktail.save
       redirect_to @cocktail, notice: 'Cocktail created!'
@@ -22,10 +22,6 @@ class CocktailsController < ApplicationController
   end
 
   private
-
-  def set_cocktail
-    @cocktail = Cocktail.find(params[:id])
-  end
 
   def cocktail_params
     params.require(:cocktail)

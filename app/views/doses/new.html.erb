@@ -1,7 +1,7 @@
 <h1>Add a new cocktail</h1>
-<%= simple_form_for @user do |f| %>
-  <%= f.input :name %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.association :ingredient %>
-  <%= f.association :dose %>
+  <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
+<a><%= link_to 'Cocktail', cocktails_path %></a>

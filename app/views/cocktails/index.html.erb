@@ -2,6 +2,6 @@
 
 <ul class="list-group">
   <% @cocktails.each do |n| %>
-      <li class="list-group-item"><%= n.name %></li>
+      <li class="list-group-item"><%= link_to n.name, cocktail_path(n) %></li>
 <% end %>
 </ul>
